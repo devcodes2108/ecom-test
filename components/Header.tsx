@@ -41,21 +41,29 @@ export function Header() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 sm:px-6">
-          <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 lg:hidden"
-            type="button"
-            aria-label="Open navigation"
-            onClick={() => setMenuOpen(true)}
-          >
-            <Menu size={20} />
-          </button>
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+          <div className="flex items-center gap-3">
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 lg:hidden"
+              type="button"
+              aria-label="Open navigation"
+              onClick={() => setMenuOpen(true)}
+            >
+              <Menu size={20} />
+            </button>
 
-          <a href="#" className="font-serif text-2xl tracking-wide text-rose-800">
-            Femiknit
-          </a>
+            <a href="#" className="font-serif text-xl tracking-wide text-rose-800 sm:text-2xl">
+              Femiknit
+            </a>
 
-          <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-medium text-gray-700 lg:flex">
+            <div className="ml-auto flex items-center gap-2 sm:gap-3">
+              <IconBadge icon={<Heart size={20} />} label="Wishlist" count={wishlistCount} />
+              <IconBadge icon={<UserRound size={20} />} label="Account" />
+              <IconBadge icon={<ShoppingBag size={20} />} label="Cart" count={cartCount} />
+            </div>
+          </div>
+
+          <nav className="mt-3 hidden items-center justify-center gap-6 text-sm font-medium text-gray-700 lg:flex">
             {navItems.map((item) => (
               <a
                 className="group relative transition-colors duration-300 hover:text-rose-600"
@@ -68,7 +76,16 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="ml-auto hidden min-w-56 max-w-xs flex-1 items-center rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm md:flex lg:max-w-sm">
+          <div className="mt-3 flex items-center rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm md:hidden">
+            <Search size={18} className="text-gray-400" />
+            <input
+              className="min-w-0 flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-400"
+              placeholder="Search collection"
+              aria-label="Search products"
+            />
+          </div>
+
+          <div className="mt-3 hidden min-w-56 max-w-xs flex-1 items-center rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm md:flex lg:max-w-sm">
             <Search size={18} className="text-gray-400" />
             <input
               className="min-w-0 flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-gray-400"
@@ -78,12 +95,6 @@ export function Header() {
             <button className="text-sm font-semibold text-rose-700" type="button">
               Search
             </button>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <IconBadge icon={<Heart size={20} />} label="Wishlist" count={wishlistCount} />
-            <IconBadge icon={<UserRound size={20} />} label="Account" />
-            <IconBadge icon={<ShoppingBag size={20} />} label="Cart" count={cartCount} />
           </div>
         </div>
       </header>

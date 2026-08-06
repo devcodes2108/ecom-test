@@ -53,9 +53,9 @@ export function ShopExperience() {
   const colorOptions = Array.from(new Set(products.flatMap((product) => product.colors.map((color) => color.name))));
 
   return (
-    <section id="shop" className="mx-auto grid max-w-7xl grid-cols-1 gap-8 p-6 lg:grid-cols-4">
+    <section id="shop" className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 sm:p-6 lg:grid-cols-4 lg:gap-8">
       <aside className="lg:col-span-1">
-        <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+        <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
           <div className="mb-5 flex items-center justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600">Filters</p>
@@ -115,7 +115,7 @@ export function ShopExperience() {
           <p className="text-sm font-medium text-gray-500">{filteredProducts.length} styles matched</p>
         </div>
 
-        <motion.div layout className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <motion.div layout className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3">
           {filteredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}

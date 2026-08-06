@@ -8,7 +8,7 @@ import { ToranSvg } from "@/components/Motifs";
 export function FestiveFeature() {
   return (
     <section className="overflow-hidden bg-amber-50/70 py-14">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <ToranSvg className="mb-5 h-24 w-full" />
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
@@ -18,7 +18,7 @@ export function FestiveFeature() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rose-700">Festive Toran Edit</p>
-            <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-rose-950 sm:text-5xl">
+            <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-rose-950 sm:text-4xl lg:text-5xl">
               Sarees, kurtas and kids sets for the season's brightest doorways.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-gray-600">

@@ -15,7 +15,7 @@ export function Footer() {
       <div className="mandala-ink absolute -right-24 -top-24 h-80 w-80 rounded-full opacity-70" />
       <div className="mandala-ink absolute -bottom-28 left-8 h-72 w-72 rounded-full opacity-40" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-14">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14">
         <div className="grid gap-9 lg:grid-cols-[1.2fr_1.8fr]">
           <div>
             <div className="mb-4 flex items-center gap-3">

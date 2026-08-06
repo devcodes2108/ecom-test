@@ -20,7 +20,7 @@ export function HeroCarousel() {
   const go = (direction: number) => setActive((current) => (current + direction + heroSlides.length) % heroSlides.length);
 
   return (
-    <section className="relative h-[78vh] min-h-[560px] overflow-hidden bg-gray-950">
+    <section className="relative min-h-[560px] overflow-hidden bg-gray-950 sm:min-h-[640px] lg:h-[78vh] lg:min-h-[560px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.image}
@@ -35,9 +35,9 @@ export function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="max-w-2xl pt-12 text-white"
+          className="max-w-2xl pt-8 text-white sm:pt-10 lg:pt-12"
           key={slide.title}
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
@@ -46,15 +46,15 @@ export function HeroCarousel() {
           <span className="mb-5 inline-flex rounded-full bg-amber-500 px-4 py-2 text-sm font-bold text-rose-950 shadow-lg">
             {slide.badge}
           </span>
-          <h1 className="font-serif text-4xl font-bold leading-tight sm:text-5xl lg:text-7xl">{slide.title}</h1>
+          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-5xl lg:text-7xl">{slide.title}</h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-white/90 sm:text-lg">{slide.subtitle}</p>
-          <button className="mt-8 rounded-full bg-rose-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-rose-700">
+          <button className="mt-6 rounded-full bg-rose-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-rose-700 sm:mt-8">
             {slide.cta}
           </button>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">
+      <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-7">
         {heroSlides.map((item, index) => (
           <button
             className={`h-2.5 rounded-full transition-all ${active === index ? "w-10 bg-amber-400" : "w-2.5 bg-white/70"}`}
@@ -66,7 +66,7 @@ export function HeroCarousel() {
       </div>
 
       <button
-        className="absolute left-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-rose-800 shadow-lg transition hover:bg-white sm:inline-flex"
+        className="absolute left-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-rose-800 shadow-lg transition hover:bg-white sm:left-4 sm:h-11 sm:w-11"
         type="button"
         aria-label="Previous slide"
         onClick={() => go(-1)}
@@ -74,7 +74,7 @@ export function HeroCarousel() {
         <ChevronLeft />
       </button>
       <button
-        className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-rose-800 shadow-lg transition hover:bg-white sm:inline-flex"
+        className="absolute right-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-rose-800 shadow-lg transition hover:bg-white sm:right-4 sm:h-11 sm:w-11"
         type="button"
         aria-label="Next slide"
         onClick={() => go(1)}

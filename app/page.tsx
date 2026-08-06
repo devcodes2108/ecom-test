@@ -9,7 +9,7 @@ import { TrustBadges } from "@/components/TrustBadges";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen overflow-x-hidden bg-white">
       <Header />
       <HeroCarousel />
       <MandalaDivider label="Curated for every celebration" />
