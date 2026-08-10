@@ -58,7 +58,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col justify-between gap-5 border-t border-white/10 pt-6 text-sm sm:flex-row sm:items-center">
-          <p>(c) 2026 Femiknit. Crafted for Indian ethnic wear shoppers.</p>
+          <p>
+            © 2026 Femiknit. Crafted for Indian ethnic wear shoppers.
+            <span className="ml-2 text-amber-300">Developed by Vebmore</span>
+          </p>
           <div className="flex gap-3">
             <a className="rounded-full bg-white/10 p-2 transition hover:bg-rose-600" href="#" aria-label="Instagram">
               <AtSign size={18} />
